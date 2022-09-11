@@ -24,9 +24,9 @@ Original dataset contain folder with brand and modelname, like:
 ```
 Three sample images are shown below.
 <div>
-<img src="img_for_readme/1517175.jpg" width="270" height="260">
-<img src="img_for_readme/30959382.jpg" width="270" height="260">
-<img src="img_for_readme/41840134.jpg" width="270" height="260">
+<img src="img_for_readme/1517175.jpg" width="270" height="210">
+<img src="img_for_readme/30959382.jpg" width="270" height="210">
+<img src="img_for_readme/41840134.jpg" width="270" height="210">
 </div>
 
 <!-- ![first](img_for_readme/1517175.jpg)
