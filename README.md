@@ -31,6 +31,7 @@ Three sample images are shown below.
 
 
 While checking through the data, i observed that the dataset contained many unwanted images, e.g., pictures of wing mirrors, door handles, GPS panels, or lights, so i process dataset manually.
+
 Examples of unwanted images can be seen below.
 
 <div>
