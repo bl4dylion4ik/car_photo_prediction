@@ -29,5 +29,5 @@ While checking through the data, i observed that the dataset contained many unwa
 Examples of unwanted images can be seen below.
 ![first](img_for_readme/47622533.jpg)
 ![second](img_for_readme/57493534.jpg)
-![third](img_for_readme/65405577.jpg)
+<!-- ![third](img_for_readme/65405577.jpg) -->
 ![fourth](img_for_readme/69188771.jpg)
