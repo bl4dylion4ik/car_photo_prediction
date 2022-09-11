@@ -23,14 +23,15 @@ Original dataset contain folder with brand and modelname, like:
 |   ...
 ```
 Three sample images are shown below.
-
-<!-- 
+<div>
 <img src="img_for_readme/1517175.jpg" width="270">
 <img src="img_for_readme/30959382.jpg" width="270">
-<img src="img_for_readme/41840134.jpg" width="270"> -->
-![first](img_for_readme/1517175.jpg)
+<img src="img_for_readme/41840134.jpg" width="270">
+</div>
+
+<!-- ![first](img_for_readme/1517175.jpg)
 ![second](img_for_readme/30959382.jpg)
-![third](img_for_readme/41840134.jpg){width=250px}
+![third](img_for_readme/41840134.jpg) -->
 
 While checking through the data, i observed that the dataset contained many unwanted images, e.g., pictures of wing mirrors, door handles, GPS panels, or lights, so i process dataset manually.
 Examples of unwanted images can be seen below.
