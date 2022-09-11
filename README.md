@@ -30,7 +30,7 @@ Three sample images are shown below.
 </div>
 
 
-While checking through the data, i observed that the dataset contained many unwanted images, e.g., pictures of wing mirrors, door handles, GPS panels, or lights, so i process dataset manually.
+While checking through the data, i observed that the dataset contained many unwanted images, e.g., pictures of wing mirrors, door handles, GPS panels, or lights.
 
 Examples of unwanted images can be seen below.
 
@@ -40,3 +40,10 @@ Examples of unwanted images can be seen below.
 <img src="img_for_readme/65405577.jpg">
 </div>
 
+#### Filtering Unwanted Images Out of the Dataset
+
+There are multiple possible approaches to filter non-car images out of the dataset:
+
+- Process images manually
+- Train another model to classify car/no-car
+- Use a pretrained model
