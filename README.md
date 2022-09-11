@@ -29,18 +29,13 @@ Three sample images are shown below.
 <img src="img_for_readme/41840134.jpg" width="270" height="210">
 </div>
 
-<!-- ![first](img_for_readme/1517175.jpg)
-![second](img_for_readme/30959382.jpg)
-![third](img_for_readme/41840134.jpg) -->
 
 While checking through the data, i observed that the dataset contained many unwanted images, e.g., pictures of wing mirrors, door handles, GPS panels, or lights, so i process dataset manually.
 Examples of unwanted images can be seen below.
 
 <div>
-<img src="img_for_readme/47622533.jpg">
-<img src="img_for_readme/57493534.jpg">
-<img src="img_for_readme/65405577.jpg">
+<img src="img_for_readme/47622533.jpg" width="270" height="210">
+<img src="img_for_readme/57493534.jpg" width="270" height="210">
+<img src="img_for_readme/65405577.jpg" width="270" height="210">
 </div>
-<!-- ![first_prosess](img_for_readme/47622533.jpg)
-![second_prosess](img_for_readme/57493534.jpg)
-![third_prosess](img_for_readme/65405577.jpg) -->
+
