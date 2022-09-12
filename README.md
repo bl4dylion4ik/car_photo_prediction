@@ -73,7 +73,7 @@ def process_img(filename: str):
 After prediction i filter unwanted image by using probability of prediction and threshold value.
 
 ```python
-def is_car_acc_prob(predictions: torch.tensor, thresh: float):
+def is_car_acc_prob(predictions: torch.Tensor, thresh: float):
     prob = np.array(torch.nn.functional.softmax(predictions), dtype=float)
     car_probs = prob[:, CAR_IDX]
     car_probs_acc = car_probs.sum(axis=1)
