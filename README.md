@@ -52,7 +52,7 @@ I decided to use a pretrained model since it is the most direct one, easy and ou
 
 In a first step, i figure out the indices and classnames of the imagenet labels corresponding to car images.
 ```python
-CAR_IDX = [656, 627, 817, 511, 468, 751, 705, 757, 717, 734, 654, 675, 864, 609, 436, 581]
+CAR_IDX = [656, 627, 817, 511, 468, 751, 705, 757, 717, 734, 654, 675, 864, 609, 436]
 ```
 Next i load pretrained model. Then i load images and preprocess them. 
 
@@ -83,7 +83,7 @@ def is_car_acc_prob(predictions: torch.tensor, thresh: float):
 While tuning the prefiltering procedure, i observed the following:
 
 - Many of the car images model classified as “beach wagons”. i thus decided to also consider the “beach wagon” index class in imagenet as one of the CAR_IDX.
-- Images showing the front of a car are often assigned a high probability of “grille”, which is the grating at the front of a car used for cooling, so i decided to use “grille” index in CAR_IDX too.
+- Images showing the front of a car are often assigned a high probability of “grille”, which is the grating at the front of a car used for cooling, This assignment is correct but a lot of images with grating at the front of a car represent an open hood of the car and are not very useful for further training of the model.
 
 
 #### Overview of the Final Datasets
