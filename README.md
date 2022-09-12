@@ -35,7 +35,7 @@ While checking through the data, i observed that the dataset contained many unwa
 Examples of unwanted images can be seen below.
 
 <div>
-<img src="img_for_readme/47622533.jpg">
+<img src="img_for_readme/47622533.jpg" width="300">
 <img src="img_for_readme/57493534.jpg">
 <img src="img_for_readme/65405577.jpg" width="270">
 </div>
