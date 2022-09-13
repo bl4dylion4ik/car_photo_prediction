@@ -10,8 +10,8 @@ import matplotlib.pyplot as plt
 
 CAR_IDX = [656, 627, 817, 511, 468, 751, 705, 757, 717, 734, 654, 675, 864, 609, 436]  # car classes in imagenet dataset
 THRESH = 0.35
-model = torch.hub.load('pytorch/vision:v0.10.0', 'mobilenet_v2', pretrained=True)
-model.eval()
+prediction_model = torch.hub.load('pytorch/vision:v0.10.0', 'mobilenet_v2', pretrained=True)
+prediction_model.eval()
 
 
 def process_img(filename: str):
@@ -51,10 +51,10 @@ def filter_img(photo_dir: str):
 
                 if torch.cuda.is_available():
                     input_img = input_img.to('cuda')
-                    model.to('cuda')
+                    prediction_model.to('cuda')
 
                 with torch.no_grad():
-                    output = model(input_img)
+                    output = prediction_model(input_img)
                 res = is_car_acc_prob(output, THRESH)
                 if not res:
                     unwanted_img.append(img_file)
