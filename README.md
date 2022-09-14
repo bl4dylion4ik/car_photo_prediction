@@ -81,7 +81,7 @@ def is_car_acc_prob(predictions: torch.Tensor, thresh: float):
     return car_probs_acc > thresh
 ```
 
-While tuning the prefiltering procedure, i tried different threshold value and finally came to the conclusion that optimal value of threshold is beetwen 0.35-0.5. In this range, most unnecessary photos such as the car interior are removed and almost all the necessary elements of the car remain. I decide to set a threshold value=0,4. Also in the this process and observed the following :
+While tuning the prefiltering procedure, i tried different threshold value and finally came to the conclusion that optimal value of threshold is beetwen 0.35-0.5. In this range, most unnecessary photos such as the car interior are removed and we do not lose too many car images which are necessary for us. I decide to set a threshold value=0,4. Also in the this process and observed the following :
 
 - Many of the car images model classified as “beach wagons”. i thus decided to also consider the “beach wagon” index class in imagenet as one of the CAR_IDX.
 - Images showing the front of a car are often assigned a high probability of “grille”, which is the grating at the front of a car used for cooling, This assignment is correct but a lot of images with grating at the front of a car represent an open hood of the car and are not very useful for further training of the model.
