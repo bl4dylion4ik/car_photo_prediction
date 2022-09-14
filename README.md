@@ -5,8 +5,9 @@ TBD
 ### Classifying Car Models
 
 #### Data Preparation
-I used dataset which i made by myself, using site av.by for extract and load image. You can also download [entire dataset](https://github.com/bl4dylion4ik/car_photo_prediction). Dataset contain about 400.000 not processed img.
-Also, if you want to download [processed dataset](https://github.com/bl4dylion4ik/car_photo_prediction), with most popular brand, you can download it too.
+I used dataset which i made by myself, using site av.by for extract and load image. You can also download [entire dataset](https://github.com/bl4dylion4ik/car_photo_prediction). Dataset contain about 400.000 unprocessed image.
+Also, if you want to download [processed dataset](https://github.com/bl4dylion4ik/car_photo_prediction), with most popular brand that contain about 250.000, you can download it too.
+
 Original dataset contain folder with brand and modelname, like:
 ```project
 │
@@ -80,11 +81,17 @@ def is_car_acc_prob(predictions: torch.Tensor, thresh: float):
     return car_probs_acc > thresh
 ```
 
-While tuning the prefiltering procedure, i observed the following:
+While tuning the prefiltering procedure, i tried different threshold value and finally came to the conclusion that optimal value of threshold is beetwen 0.35-0.5. In this range, most unnecessary photos such as the car interior are removed and we do not lose too many car images which are necessary for us. I decide to set a threshold value=0,4. Also in the this process and observed the following :
 
 - Many of the car images model classified as “beach wagons”. i thus decided to also consider the “beach wagon” index class in imagenet as one of the CAR_IDX.
 - Images showing the front of a car are often assigned a high probability of “grille”, which is the grating at the front of a car used for cooling, This assignment is correct but a lot of images with grating at the front of a car represent an open hood of the car and are not very useful for further training of the model.
 
-
+Also after filtering the images i left pictures only of those car models in which there were enough pictures for training. Basically, these were quite popular and well-known car models.
 #### Overview of the Final Datasets
-TBD
+The prefiltered dataset contains images from 800 car models. Dataset containing about 200.000 labeled images. The class occurrences are distributed as follows:
+
+<div>
+<img src="img_for_readme/">
+</div>
+
+The number of images per class (car model) ranges from 24 to slightly below 500. We can see that the dataset is very imbalanced. It is essential to keep this in mind when training and evaluating the model.
