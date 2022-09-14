@@ -88,10 +88,10 @@ While tuning the prefiltering procedure, i tried different threshold value and f
 
 Also after filtering the images i left pictures only of those car models in which there were enough pictures for training. Basically, these were quite popular and well-known car models.
 #### Overview of the Final Datasets
-The prefiltered dataset contains images from 800 car models. Dataset containing about 200.000 labeled images. The class occurrences are distributed as follows:
+The prefiltered dataset contains images from 603 car models. Dataset containing about 220.000 labeled images. The class occurrences are distributed as follows:
 
 <div>
-<img src="img_for_readme/">
+<img src="img_for_readme/count_classes.jpg">
 </div>
 
-The number of images per class (car model) ranges from 24 to slightly below 500. We can see that the dataset is very imbalanced. It is essential to keep this in mind when training and evaluating the model.
+The number of images per class (car model) ranges from 35 to slightly below 7000. We can see that the dataset is very imbalanced. It is essential to keep this in mind when training and evaluating the model. On average, one car model has about 200 images
