@@ -12,16 +12,27 @@ Original dataset contain folder with brand and modelname, like:
 ```project
 │
 └───Audi
-│   │   47623453.jpg
-│   │   43244243.jpg
-│   |   ...
-|
+|   └───A4
+│   │   |   47623453.jpg
+│   │   |   43244243.jpg
+│   |   |...
+|   |
+|   └───A6
+|   |   |   34525252.jpg
+|   |   |   42455252.jpg
+|   |   |...
+|   |   
+|   |...
+|   
 └───BMW
-|   │   23425253.jpg
-|   │   76543523.jpg
-|   |   ...
+|   └───X5
+|   |   |   23425253.jpg 
+|   │   |   76543523.jpg
+|   │   |...
+|   |
+|   |...
 |
-|   ...
+|...
 ```
 Three sample images are shown below.
 <div>
