@@ -12,16 +12,27 @@ Original dataset contain folder with brand and modelname, like:
 ```project
 │
 └───Audi
-│   │   47623453.jpg
-│   │   43244243.jpg
-│   |   ...
-|
+|   └───A4
+│   │   |   47623453.jpg
+│   │   |   43244243.jpg
+│   |   |...
+|   |
+|   └───A6
+|   |   |   34525252.jpg
+|   |   |   42455252.jpg
+|   |   |...
+|   |   
+|   |...
+|   
 └───BMW
-|   │   23425253.jpg
-|   │   76543523.jpg
-|   |   ...
+|   └───X5
+|   |   |   23425253.jpg 
+|   │   |   76543523.jpg
+|   │   |...
+|   |
+|   |...
 |
-|   ...
+|...
 ```
 Three sample images are shown below.
 <div>
@@ -88,10 +99,13 @@ While tuning the prefiltering procedure, i tried different threshold value and f
 
 Also after filtering the images i left pictures only of those car models in which there were enough pictures for training. Basically, these were quite popular and well-known car models.
 #### Overview of the Final Datasets
-The prefiltered dataset contains images from 800 car models. Dataset containing about 200.000 labeled images. The class occurrences are distributed as follows:
+The prefiltered dataset contains images from 603 car models. Dataset containing about 220.000 labeled images. The class occurrences are distributed as follows:
 
 <div>
-<img src="img_for_readme/">
+<img src="img_for_readme/count_classes.jpg">
 </div>
 
-The number of images per class (car model) ranges from 24 to slightly below 500. We can see that the dataset is very imbalanced. It is essential to keep this in mind when training and evaluating the model.
+The number of images per class (car model) ranges from 35 to slightly below 7000. We can see that the dataset is very imbalanced. In the picture you can see that several popular models have a very large number of images(~2000-7000), but on average, one car model has about 200 images. It is essential to keep this in mind when training and evaluating the model.
+
+#### Building Data Pipelines with PyTorch
+TBD
