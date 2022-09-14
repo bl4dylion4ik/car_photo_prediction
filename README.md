@@ -108,3 +108,4 @@ The prefiltered dataset contains images from 603 car models. Dataset containing 
 The number of images per class (car model) ranges from 35 to slightly below 7000. We can see that the dataset is very imbalanced. In the picture you can see that several popular models have a very large number of images(~2000-7000), but on average, one car model has about 200 images. It is essential to keep this in mind when training and evaluating the model.
 
 #### Building Data Pipelines with PyTorch
+TBD
