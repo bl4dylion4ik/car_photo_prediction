@@ -6,7 +6,7 @@ TBD
 
 #### Data Preparation
 I used dataset which i made by myself, using site av.by for extract and load image. You can also download [entire dataset](https://github.com/bl4dylion4ik/car_photo_prediction). Dataset contain about 400.000 unprocessed image.
-Also, if you want to download [processed dataset](https://drive.google.com/file/d/1NYxkEuhr818bELaMJAY1lLlVwHlKTpMO/view), with most popular brand that contain about 250.000, you can download it too.
+Also, if you want to download [processed dataset](https://drive.google.com/file/d/1IhJI7KvZVj0CzaloWS6a6Kqs0ZXslIH_/view), with most popular brand that contain about 250.000, you can download it too.
 
 Original dataset contain folder with brand and modelname, like:
 ```project
