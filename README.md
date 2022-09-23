@@ -156,3 +156,12 @@ for fig_x in ax.flatten():
 <div>
 <img src="img_for_readme/chrome_1NhfZlCAOb.png">
 </div>
+
+#### Future plan
+Because of the dataset is not balanced i will try to research different trick such as:
+
+- Use Focal Loss instead of CrossEntropyLoss
+- Make undersampling or oversampling
+- Use data augmentation
+- Use learning rate scheduler
+- Use re-weighting method
