@@ -114,7 +114,7 @@ For my baseline i choose pre-training EfficientNet. The architecture of the mode
 For metric classification i used f1-score. The mean of 100 sampling result is 0,8. I make a plot of train and validation accuracy after completing the training.
 
 <div>
-<img src="img_for_readme/acc_plot.jpg">
+<img src="img_for_readme/chrome_rhcTwwiPax.png">
 </div>
 
 Also i make a beautiful visualization of confidence of our neural network. 
@@ -154,5 +154,5 @@ for fig_x in ax.flatten():
 ```
 
 <div>
-<img src="img_for_readme/visalization_confidence.jpg">
+<img src="img_for_readme/chrome_1NhfZlCAOb.png">
 </div>
