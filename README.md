@@ -108,4 +108,60 @@ The prefiltered dataset contains images from 603 car models. Dataset containing 
 The number of images per class (car model) ranges from 35 to slightly below 7000. We can see that the dataset is very imbalanced. In the picture you can see that several popular models have a very large number of images(~2000-7000), but on average, one car model has about 200 images. It is essential to keep this in mind when training and evaluating the model.
 
 #### Building Data Pipelines with PyTorch
-TBD
+For my baseline i choose pre-training EfficientNet. The architecture of the model you can see [this](https://pytorch.org/hub/nvidia_deeplearningexamples_efficientnet/). For training model i use Google Colab with free GPU and conducted training in several stages because of free limits in Colab. After import  model i change input classes and create train function. For th loss i used CrossEntropyLoss, for optimizer i use SGD with lr=0,001 and momentum=0,9.
+
+#### Model Performance Evaluation
+For metric classification i used f1-score. The mean of 100 sampling result is 0,8. I make a plot of train and validation accuracy after completing the training.
+
+<div>
+<img src="img_for_readme/chrome_rhcTwwiPax.png">
+</div>
+
+Also i make a beautiful visualization of confidence of our neural network. 
+
+```python
+import matplotlib.patches as patches
+from matplotlib.font_manager import FontProperties
+
+fig, ax = plt.subplots(nrows=3, ncols=3,figsize=(12, 12), \
+                        sharey=True, sharex=True)
+for fig_x in ax.flatten():
+    random_characters = int(np.random.uniform(0,1000))
+    im_val, label = val_dataset[random_characters]
+    img_label = " ".join(map(lambda x: x.capitalize(),\
+                val_dataset.label_encoder.inverse_transform([label])[0].split('_')))
+    
+    
+
+    imshow(im_val.data.cpu(), \
+          title=img_label,plt_ax=fig_x)
+    
+    actual_text = "Actual : {}".format(img_label)
+            
+    fig_x.add_patch(patches.Rectangle((0, 0),100,25,color='white'))
+    font0 = FontProperties(size='x-large')
+    font = font0.copy()
+    prob_pred = predict_one_sample(model_ft, im_val.unsqueeze(0))
+    predicted_proba = np.max(prob_pred)*100
+    y_pred = np.argmax(prob_pred)
+    
+    predicted_label = label_encoder.classes_[y_pred]
+    predicted_label = predicted_label[:len(predicted_label)//2] + '\n' + predicted_label[len(predicted_label)//2:]
+    predicted_text = "{} : {:.0f}%".format(predicted_label,predicted_proba)
+            
+    fig_x.text(50, 1, predicted_text , horizontalalignment='center', fontproperties=font,
+                    verticalalignment='top',fontsize=8, color='black',fontweight='bold')
+```
+
+<div>
+<img src="img_for_readme/chrome_1NhfZlCAOb.png">
+</div>
+
+#### Future plan
+Because of the dataset is not balanced i will try to research different trick such as:
+
+- Use Focal Loss instead of CrossEntropyLoss
+- Make undersampling or oversampling
+- Use data augmentation
+- Use learning rate scheduler
+- Use re-weighting method
