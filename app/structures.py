@@ -2,14 +2,9 @@ from typing import List, Optional
 from pydantic import BaseModel
 
 
-class OptionalK(BaseModel):
+class TOPK(BaseModel):
     k: Optional[int]
     desc: Optional[str] = 'Use number of top k probabilities'
-
-
-class Prediction(BaseModel):
-    labels_list: List[str]
-    scores_list: List[float]
 
 
 class ReturnValue(BaseModel):
@@ -19,4 +14,4 @@ class ReturnValue(BaseModel):
 
 
 class PredictReturnValue(ReturnValue):
-    prediction: Optional[Prediction]
+    prediction: Optional[dict]
