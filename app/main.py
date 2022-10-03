@@ -1,11 +1,13 @@
 import sys
+import traceback
 
 import uvicorn
-from fastapi import FastAPI, File, UploadFile, Depends, Request
-from src.models.predict_model import MODEL, predict_top_labels
-from structures import OptionalK
+from fastapi import FastAPI, File, UploadFile, Depends, HTTPException
 
-app = FastAPI()
+from src.models.predict_model import MODEL, predict_top_labels
+from structures import TOPK, ReturnValue, PredictReturnValue
+
+app = FastAPI(title='Prediction popular car image')
 
 
 @app.get("/")
@@ -13,15 +15,26 @@ async def root():
     return {"message": "Hello World"}
 
 
-@app.post("/predict")
-async def predict(file: UploadFile = File(...), optional: OptionalK = Depends()):
-    top_k = optional.dict()['k'] or 5
+@app.post("/predict", response_model=PredictReturnValue, name='Predict')
+async def predict(file: UploadFile = File(...), options: TOPK = Depends()):
     extension = file.filename.split(".")[-1] in ("jpg", "jpeg", "png")
     if not extension:
-        return "Image must be jpg or png format!"
-    image = await file.read()
-    prediction = predict_top_labels(model=MODEL, image_bytes=image, top_k=top_k)
-    return prediction
+        raise HTTPException(status_code=400, detail=f'File \'{file.filename}\' is not an image.')
+
+    try:
+        top_k = options.dict()['k'] or 5
+        image = await file.read()
+
+        prediction = predict_top_labels(model=MODEL, image_bytes=image, top_k=top_k)
+        return PredictReturnValue(success=True,
+                                  prediction=prediction['prediction'])
+
+    except Exception as error:
+        return PredictReturnValue(
+            success=False,
+            message=str(error),
+            traceback=str(traceback.format_exc()),
+        )
 
 
 if __name__ == '__main__':
