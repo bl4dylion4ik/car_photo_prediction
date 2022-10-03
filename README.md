@@ -172,6 +172,6 @@ FastAPI have some advantages instead of Flask, such as FastAPI is based on an fa
 
 For a baseline of create post method which process and predict uploaded image.
 <div>
-<img src="img_for_readme/13366.png">
+<img src="img_for_readme/13366.jpg">
 <img src="img_for_readme/chrome_zFVMUHOt2a.png">
 </div>
