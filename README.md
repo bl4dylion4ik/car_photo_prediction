@@ -170,3 +170,8 @@ Because of the dataset is not balanced i will try to research different trick su
 FastAPI is a Python web framework that makes it easy for developers to build fast (high-performance), production-ready REST APIs. If you’re a data scientist who works mostly with Python, FastAPI is an excellent tool for deploying your models as REST APIs.
 FastAPI have some advantages instead of Flask, such as FastAPI is based on an faster and more modern interface ASGI, FastAPI uses Pydantic, FastAPI supports OpenAPI and allows you to output API specs automatically
 
+For a baseline of create post method which process and predict uploaded image.
+<div>
+<img src="img_for_readme/13366.png">
+<img src="img_for_readme/chrome_zFVMUHOt2a.png">
+</div>
