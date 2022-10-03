@@ -165,3 +165,8 @@ Because of the dataset is not balanced i will try to research different trick su
 - Use data augmentation
 - Use learning rate scheduler
 - Use re-weighting method
+
+### Deploy Pytorch with FastAPI
+FastAPI is a Python web framework that makes it easy for developers to build fast (high-performance), production-ready REST APIs. If you’re a data scientist who works mostly with Python, FastAPI is an excellent tool for deploying your models as REST APIs.
+FastAPI have some advantages instead of Flask, such as FastAPI is based on an faster and more modern interface ASGI, FastAPI uses Pydantic, FastAPI supports OpenAPI and allows you to output API specs automatically
+
