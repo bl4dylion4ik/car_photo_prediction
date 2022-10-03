@@ -1,8 +1,9 @@
 import sys
 
 import uvicorn
-from fastapi import FastAPI, File, UploadFile, Request
+from fastapi import FastAPI, File, UploadFile, Depends, Request
 from src.models.predict_model import MODEL, predict_top_labels
+from structures import OptionalK
 
 app = FastAPI()
 
@@ -13,14 +14,13 @@ async def root():
 
 
 @app.post("/predict")
-async def predict(file: UploadFile = File(...)):
+async def predict(file: UploadFile = File(...), optional: OptionalK = Depends()):
+    top_k = optional.dict()['k'] or 5
     extension = file.filename.split(".")[-1] in ("jpg", "jpeg", "png")
     if not extension:
-        print("Image must be jpg or png format!")
         return "Image must be jpg or png format!"
     image = await file.read()
-    prediction = predict_top_labels(model=MODEL, image_bytes=image, top_k=5)
-    print(prediction)
+    prediction = predict_top_labels(model=MODEL, image_bytes=image, top_k=top_k)
     return prediction
 
 

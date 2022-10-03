@@ -51,4 +51,4 @@ def predict_top_labels(model, image_bytes, top_k, device=DEVICE) -> dict:
     top_prob, top_catid = torch.topk(probabilities, top_k)
     for i in range(top_prob.size(0)):
         top_predict[label_encoder.classes_[top_catid[i]]] = round(top_prob[i].item(), 3)
-    return top_predict
+    return {'prediction': top_predict}
